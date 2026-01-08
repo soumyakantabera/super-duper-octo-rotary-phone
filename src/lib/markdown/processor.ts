@@ -6,7 +6,6 @@ import remarkRehype from 'remark-rehype';
 import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 import rehypeStringify from 'rehype-stringify';
 import rehypeHighlight from 'rehype-highlight';
-import rehypeMathjax from 'rehype-mathjax';
 
 // Create a safe sanitization schema
 const sanitizeSchema = {
@@ -37,8 +36,6 @@ const sanitizeSchema = {
     'g',
     'defs',
     'use',
-    'mjx-container',
-    'mjx-math',
   ],
 };
 
@@ -54,7 +51,6 @@ export async function processMarkdown(content: string): Promise<string> {
         detect: true,
         ignoreMissing: true 
       })
-      .use(rehypeMathjax)
       .use(rehypeStringify);
 
     const result = await processor.process(content);

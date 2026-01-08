@@ -1,5 +1,5 @@
-import { openDB, DBSchema, IDBPDatabase } from 'idb';
-import { Document, AutosaveEntry } from '../../types/document';
+import { openDB, type DBSchema, type IDBPDatabase } from 'idb';
+import type { Document, AutosaveEntry } from '../../types/document';
 
 interface EditorDB extends DBSchema {
   documents: {

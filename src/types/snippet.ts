@@ -1,14 +1,16 @@
-export enum SnippetCategory {
-  FRACTIONS = 'fractions',
-  MATRICES = 'matrices',
-  OPERATORS = 'operators',
-  GREEK = 'greek',
-  SETS = 'sets',
-  CALCULUS = 'calculus',
-  PROBABILITY = 'probability',
-  BRACKETS = 'brackets',
-  SUBSCRIPTS = 'subscripts',
-}
+export const SnippetCategory = {
+  FRACTIONS: 'fractions',
+  MATRICES: 'matrices',
+  OPERATORS: 'operators',
+  GREEK: 'greek',
+  SETS: 'sets',
+  CALCULUS: 'calculus',
+  PROBABILITY: 'probability',
+  BRACKETS: 'brackets',
+  SUBSCRIPTS: 'subscripts',
+} as const;
+
+export type SnippetCategory = typeof SnippetCategory[keyof typeof SnippetCategory];
 
 export interface Placeholder {
   index: number;

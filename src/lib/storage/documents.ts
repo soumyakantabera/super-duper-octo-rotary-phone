@@ -1,5 +1,5 @@
 import { getDB } from './db';
-import { Document } from '../../types/document';
+import type { Document } from '../../types/document';
 import { v4 as uuidv4 } from 'uuid';
 
 export async function createDocument(
